@@ -1,0 +1,13 @@
+<ion-view title="Gás" id="page8" ng-controller="GasCtrl as GasCtrl">
+  <ion-nav-buttons side="right" class="has-header" >
+    <button class="button button-icon icon ion-android-home" ng-click="GasCtrl.goHome()"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <creator-map-component options="{&quot;mapTypeId&quot;:&quot;roadmap&quot;}" marker="true" location="erechim" zoom="16" style="display:block;position:relative;width:100%;height:300px;">
+      <ui-gmap-google-map ng-if="map.center" center="map.center" zoom="map.zoom" options="map.options">
+        <ui-gmap-marker coords="map.marker.coords" idkey="map.marker.id" options="map.marker.options"></ui-gmap-marker>
+      </ui-gmap-google-map>
+    </creator-map-component>
+    <a ng-click="GasCtrl.goAcompanhar()" id="gS-button7" class="button button-positive  button-block">Solicitar</a>
+  </ion-content>
+</ion-view>

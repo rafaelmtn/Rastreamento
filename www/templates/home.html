@@ -1,0 +1,23 @@
+
+<ion-view view-title="Home" id="page6" ng-controller="HomeCtrl as HomeCtrl">
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-icon icon ion-ios-person" ng-click="HomeCtrl.goProfile()"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <form id="home-form7" class="list">
+      <ion-list id="home-list1">
+        <label class="item item-input" id="home-input12">
+          <span class="input-label">Usuário</span>
+          <input type="text" placeholder="">
+        </label>
+        <label class="item item-input" id="home-input13">
+          <span class="input-label">Senha</span>
+          <input type="password" placeholder="">
+        </label>
+      </ion-list>
+      <button id="home-button4" style="color:#FFFFFF;" class="button button-positive  button-block">Entrar</button>
+      <button id="home-button6" style="color:#FFFFFF;" class="button button-positive  button-block icon-left ion-social-facebook " data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false">Logar com facebook</button>
+      <a ng-click="HomeCtrl.goCadastrar()" id="home-button5" class="button button-positive  button-block button-clear">ou criar uma conta</a>
+    </form>
+  </ion-content>
+</ion-view>
