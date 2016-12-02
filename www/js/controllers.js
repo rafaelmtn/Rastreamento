@@ -77,7 +77,7 @@ angular.module('starter.controllers', [])
       });
     };
 }])
-.controller('cadastrarCtrl', ['$scope', '$state',function ($scope, $state) {
+.controller('CadastrarCtrl', ['$scope', '$state',function ($scope, $state) {
 
 
 }])

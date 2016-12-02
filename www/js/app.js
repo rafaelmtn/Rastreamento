@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers','starter.directives','uiGmapgoogle-maps','googlemaps.init'])
 
-.run(function($ionicPlatform) {
+.run( ['$ionicPlatform', '$rootScope', '$window',  function($ionicPlatform,$rootScope, $window) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,7 +20,43 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.directives','
       StatusBar.styleDefault();
     }
   });
-})
+
+  $rootScope.user = {};
+
+    $window.fbAsyncInit = function() {
+      // Executed when the SDK is loaded
+      FB.init({
+        appId: 1770037263247097,
+        channelUrl: 'app/home.html',
+        status: true,
+        cookie: true,
+        xfbml: true,
+        version: 'v2.8'
+      });
+
+    };
+
+    (function(d){
+      // load the Facebook javascript SDK
+
+      var js,
+      id = 'facebook-jssdk',
+      ref = d.getElementsByTagName('script')[0];
+
+      if (d.getElementById(id)) {
+        return;
+      }
+
+      js = d.createElement('script');
+      js.id = id;
+      js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+
+      ref.parentNode.insertBefore(js, ref);
+
+    }(document));
+
+}])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -67,7 +103,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.directives','
       views: {
         'menuContent': {
           templateUrl: 'templates/cadastrar.html',
-          controller: 'cadastrarCtrl'
+          controller: 'CadastrarCtrl'
         }
       }
     })
@@ -76,7 +112,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.directives','
       views: {
         'menuContent': {
           templateUrl: 'templates/acompanhar.html',
-          controller: 'acompanharCtrl'
+          controller: 'AcompanharCtrl'
         }
       }
     })
@@ -86,14 +122,14 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.directives','
       views: {
       'menuContent': {
         templateUrl: 'templates/profile.html',
-        controller: 'profileCtrl'
+        controller: 'ProfileCtrl'
       }
     }
   })
   .state('app.menu', {
     url: '/menu',
     templateUrl: 'templates/menu.html',
-    controller: 'menuCtrl'
+    controller: 'MenuCtrl'
   })
     ;
   // if none of the above states are matched, use this as the fallback
