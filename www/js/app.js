@@ -27,7 +27,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.directives','
     $window.fbAsyncInit = function() {
       // Executed when the SDK is loaded
       FB.init({
-        appId: 1770037263247097,
+        appId: 446464218862874,
         channelUrl: 'app/home.html',
         status: true,
         cookie: true,
@@ -46,7 +46,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.directives','
             $rootScope.birthday = response.birthday;
             $rootScope.email = response.email;
             $rootScope.picture = response.picture.data.url;
-            
+
             console.log($rootScope.picture);
             console.log('Successful login for: ' + response.gender);
             console.log('Successful login for: ' + response.birthday);
@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.directives','
             console.log('Successful login for: ' + response.name);
           });
 
-          FB.api('/user/email', function(response) {
+          FB.api('/me/email', function(response) {
             console.log(response);
           });
 
