@@ -1,0 +1,10 @@
+<ion-view title="Acompanhar" id="page12">
+  <ion-content padding="true" class="has-header">
+    <creator-map-component options="{&quot;mapTypeId&quot;:&quot;roadmap&quot;}" marker="true" location="Erechim, AV Sete de Setembro, 1621" zoom="16" style="display:block;position:relative;width:100%;height:300px;">
+      <ui-gmap-google-map ng-if="map.center" center="map.center" zoom="map.zoom" options="map.options">
+        <ui-gmap-marker coords="map.marker.coords" idkey="map.marker.id" options="map.marker.options"></ui-gmap-marker>
+      </ui-gmap-google-map>
+    </creator-map-component>
+    <a href="#/app/home" id="acompanhar-button9" class="button button-positive  button-block">fechar</a>
+  </ion-content>
+</ion-view>
